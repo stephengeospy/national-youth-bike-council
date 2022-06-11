@@ -19,10 +19,7 @@ function NavBar() {
           >
             National Youth Bike Council
           </Link>
-          <button
-            className="focus:shadow-outline rounded-lg focus:outline-none md:hidden"
-            onClick={() => setIsNavOpen(!isNavOpen)}
-          >
+          <button className="focus:shadow-outline rounded-lg focus:outline-none md:hidden" onClick={() => setIsNavOpen(!isNavOpen)}>
             <svg fill="currentColor" viewBox="0 0 20 20" className="h-6 w-6">
               {!isNavOpen && (
                 <path
@@ -41,11 +38,7 @@ function NavBar() {
             </svg>
           </button>
         </div>
-        <nav
-          className={`${
-            isNavOpen ? `flex` : `hidden`
-          } flex-grow flex-col pb-4 md:flex md:flex-row md:justify-end md:pb-0`}
-        >
+        <nav className={`${isNavOpen ? `flex` : `hidden`} flex-grow flex-col pb-4 md:flex md:flex-row md:justify-end md:pb-0`}>
           <Link
             className="dark-mode:bg-gray-700 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 focus:shadow-outline mt-2 rounded-lg bg-gray-200 px-4 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-200 hover:text-gray-900 focus:bg-gray-200 focus:text-gray-900 focus:outline-none md:mt-0"
             to="#"
@@ -79,9 +72,7 @@ function NavBar() {
               <svg
                 fill="currentColor"
                 viewBox="0 0 20 20"
-                className={`mt-1 ml-1 inline h-4 w-4 transform transition-transform duration-200 md:-mt-1 ${
-                  isDropdownOpen ? `rotate-180` : `rotate-0`
-                }`}
+                className={`mt-1 ml-1 inline h-4 w-4 transform transition-transform duration-200 md:-mt-1 ${isDropdownOpen ? `rotate-180` : `rotate-0`}`}
               >
                 <path
                   fillRule="evenodd"

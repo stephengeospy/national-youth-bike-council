@@ -1,10 +1,7 @@
 module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-    "public/**/*.html",    
-  ],
+  content: ["./src/**/*.{js,jsx,ts,tsx}", "public/**/*.html"],
   theme: {
     extend: {},
   },
-  plugins: [],
-}
+  plugins: [require("prettier-plugin-tailwindcss")],
+};
