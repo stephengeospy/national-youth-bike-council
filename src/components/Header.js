@@ -1,6 +1,9 @@
 import { React, useState } from "react";
 import { Link } from "react-router-dom";
 import Nav from "./Nav";
+import Logo from "./Logo";
+import logoIcon from "../images/logoIcon.png";
+import Dropdown from "./Dropdown";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,12 +12,7 @@ function Header() {
     <div className="dark-mode:text-gray-200 dark-mode:bg-gray-800 w-full bg-white text-gray-700">
       <div className="mx-auto flex max-w-screen-xl flex-col px-4 md:flex-row md:items-center md:justify-between md:px-6 lg:px-8">
         <div className="flex flex-row items-center justify-between p-4">
-          <Link
-            to="#"
-            className="dark-mode:text-white focus:shadow-outline rounded-lg text-lg font-semibold uppercase tracking-widest text-gray-900 focus:outline-none"
-          >
-            National Youth Bike Council
-          </Link>
+          <Logo linkTo="" logoSrc={logoIcon} logoAlt="logo for National Youth Bike Council with a big N with wheels" />
           <button className="focus:shadow-outline rounded-lg focus:outline-none md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
             <svg fill="currentColor" viewBox="0 0 20 20" className="h-6 w-6">
               {!isMenuOpen && (
@@ -34,7 +32,26 @@ function Header() {
             </svg>
           </button>
         </div>
-        <Nav isMenuOpen={isMenuOpen}></Nav>
+        <Nav isMenuOpen={isMenuOpen}>
+          <Dropdown label="About us">
+            <Dropdown.Item linkTo="#">How It Started</Dropdown.Item>
+            <Dropdown.Item linkTo="#">Where are we?</Dropdown.Item>
+            <Dropdown.Item linkTo="#">Why the Council?</Dropdown.Item>
+            <Dropdown.Item linkTo="#">Council Members</Dropdown.Item>
+            <Dropdown.Item linkTo="#">Advisors</Dropdown.Item>
+            <Dropdown.Item linkTo="#">Board Members</Dropdown.Item>
+            <Dropdown.Item linkTo="#">Partners & Sponsorships</Dropdown.Item>
+          </Dropdown>
+          <Nav.Item linkTo="#">Projects</Nav.Item>
+          <Dropdown label="Council Press">
+            <Dropdown.Item linkTo="#">Media Coverage</Dropdown.Item>
+            <Dropdown.Item linkTo="#">Council Blogs</Dropdown.Item>
+            <Dropdown.Item linkTo="#">Newsletter</Dropdown.Item>
+          </Dropdown>
+          <Dropdown label="Resources">
+            <Dropdown.Item linkTo="#">Resources & Safety</Dropdown.Item>
+          </Dropdown>
+        </Nav>
       </div>
     </div>
   );
