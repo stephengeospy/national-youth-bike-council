@@ -9,12 +9,12 @@ function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="dark-mode:text-gray-200 dark-mode:bg-gray-800 w-full bg-white text-gray-700">
-      <div className="mx-auto flex max-w-screen-xl flex-col px-4 md:flex-row md:items-center md:justify-between md:px-6 lg:px-8">
+    <div className="w-full bg-skin-fill-primary text-skin-muted">
+      <div className="mx-auto flex max-w-screen-xl flex-col px-4 lg:flex-row lg:items-center lg:justify-between lg:px-6">
         <div className="flex flex-row items-center justify-between p-4">
           <Logo linkTo="" logoSrc={logoIcon} logoAlt="logo for National Youth Bike Council with a big N with wheels" />
           <button className="focus:shadow-outline rounded-lg focus:outline-none md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            <svg fill="currentColor" viewBox="0 0 20 20" className="h-6 w-6">
+            <svg fill="currentColor" viewBox="0 0 20 20" className="h-8 w-8">
               {!isMenuOpen && (
                 <path
                   fillRule="evenodd"
