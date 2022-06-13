@@ -1,19 +1,20 @@
 import { React, useState } from "react";
-import { Link } from "react-router-dom";
 import Nav from "./Nav";
 import Logo from "./Logo";
-import logoIcon from "../images/logoIcon.png";
 import Dropdown from "./Dropdown";
+import CTALink from "./CTALink";
+import logoIcon from "../images/logoIcon.png";
+import btnArrow from "../images/btn-arrow.svg";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="w-full bg-skin-fill-primary text-skin-muted">
+    <header className="w-full bg-skin-fill-primary text-sm text-skin-muted lg:text-base">
       <div className="mx-auto flex max-w-screen-xl flex-col px-4 lg:flex-row lg:items-center lg:justify-between lg:px-6">
-        <div className="flex flex-row items-center justify-between p-4">
+        <div className="flex flex-grow flex-row justify-between p-4 lg:px-0">
           <Logo linkTo="" logoSrc={logoIcon} logoAlt="logo for National Youth Bike Council with a big N with wheels" />
-          <button className="focus:shadow-outline rounded-lg focus:outline-none md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <button className="focus:shadow-outline rounded-lg focus:outline-none lg:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
             <svg fill="currentColor" viewBox="0 0 20 20" className="h-8 w-8">
               {!isMenuOpen && (
                 <path
@@ -51,9 +52,13 @@ function Header() {
           <Dropdown label="Resources">
             <Dropdown.Item linkTo="#">Resources & Safety</Dropdown.Item>
           </Dropdown>
+          <CTALink linkTo="#">
+            Join us
+            <img src={btnArrow} alt="arrow on button" className="ml-2 inline h-5" />
+          </CTALink>
         </Nav>
       </div>
-    </div>
+    </header>
   );
 }
 
